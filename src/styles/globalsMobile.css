@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+* ::-webkit-scrollbar {
+  /* WebKit 浏览器（如 Chrome 和 Safari） */
+  display: none;
+}
