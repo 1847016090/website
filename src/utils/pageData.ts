@@ -11,30 +11,39 @@ const data = {
     products: [
       {
         logo: '/image/pc/product-title1.png',
-        bg: '/image/pc/product-bg1.png',
+        bg: '/image/pc/product/our-product1.png',
+        icon: '/image/pc/product/product-icon1.png',
         logoText: '文旅',
         title: '若琪看看',
+        subTitle: '若琪看看',
+        subDescription: '互娱产品集合体',
         value: 1,
         description:
           '围绕 AR 设备＋云端＋小程序，构建的一站式 AR 智慧导览平台，助力文博文旅等场景打造虚实融合、乐趣横生的导览体验。',
       },
       {
         logo: '/image/pc/product-title2.png',
-        bg: '/image/pc/product-bg1.png',
+        bg: '/image/pc/product/our-product2.png',
+        icon: '/image/pc/product/product-icon1.png',
         title: '互娱',
         logoText: '互娱',
+        subTitle: '若琪玩玩',
+        subDescription: '互娱产品集合体',
         value: 2,
         description:
-          '围绕 AR 设备＋云端＋小程序，构建的一站式 AR 智慧导览平台，助力文博文旅等场景打造虚实融合、乐趣横生的导览体验。',
+          '由 AR 技术驱动的新一代互动娱乐平台，为线下商业打造一站式数字空间活动方案及丰富的互动玩法，体验空间计算时代的沉浸式快乐。',
       },
       {
         logo: '/image/pc/product-title3.png',
-        bg: '/image/pc/product-bg1.png',
+        bg: '/image/pc/product/our-product3.png',
+        icon: '/image/pc/product/product-icon3.png',
         title: '教育',
         logoText: '教育',
+        subTitle: '大象 XR 教育',
+        subDescription: '课堂教学一体化解决',
         value: 3,
         description:
-          '围绕 AR 设备＋云端＋小程序，构建的一站式 AR 智慧导览平台，助力文博文旅等场景打造虚实融合、乐趣横生的导览体验。',
+          '基于 AR、AI、人机交互与动态环境建模技术，构建 XR 教学平台；通过 A R眼镜，实现虚实融合的互动学习。',
       },
     ],
     knowMore: '/image/pc/know-more.png',
@@ -46,72 +55,234 @@ const data = {
       {
         label: '文旅',
         value: 1,
+        bg: '/image/pc/product/our-product1.png',
         children: [
           {
             bg: '/image/pc/industry-case-bg1.png',
             title: '上海自然博物馆',
             description:
-              '大弦嘈嘈如急雨，小弦切切如私语。嘈嘈切切错杂弹，大珠小珠落玉盘。',
+              '探索自然奥秘，展示生物多样性，科学教育与互动体验的完美融合。',
+            value: 1,
+            detail: [
+              {
+                description:
+                  '深度整合 AR、AI、人机交互与动态环境建模技术，构建前沿 XR 教学平台。借助 AR 眼镜，实现虚实融合的互动教学，适用于多学科课堂教学、课后自主探究及主题空间实践教学。通过互动、沉浸、体验式的创新教学方式帮助学生突破想象力局限，激发学习兴趣，提升教师数智化教学水平，助力学校打造人工智能创新校，引领教育新风尚。',
+                bg: '/image/pc/case/bg1.png',
+              },
+              {
+                description:
+                  '深度整合 AR、AI、人机交互与动态环境建模技术，构建前沿 XR 教学平台。借助 AR 眼镜，实现虚实融合的互动教学，适用于多学科课堂教学、课后自主探究及主题空间实践教学。通过互动、沉浸、体验式的创新教学方式帮助学生突破想象力局限，激发学习兴趣，提升教师数智化教学水平，助力学校打造人工智能创新校，引领教育新风尚。',
+                bg: '/image/pc/case/bg2.png',
+              },
+              {
+                description:
+                  '深度整合 AR、AI、人机交互与动态环境建模技术，构建前沿 XR 教学平台。借助 AR 眼镜，实现虚实融合的互动教学，适用于多学科课堂教学、课后自主探究及主题空间实践教学。通过互动、沉浸、体验式的创新教学方式帮助学生突破想象力局限，激发学习兴趣，提升教师数智化教学水平，助力学校打造人工智能创新校，引领教育新风尚。',
+                bg: '/image/pc/case/bg3.png',
+              },
+            ],
           },
           {
-            bg: '/image/pc/industry-case-bg1.png',
+            bg: '/image/pc/industry-case-bg2.png',
             title: '古埃及博物馆',
             description:
-              '大弦嘈嘈如急雨，小弦切切如私语。嘈嘈切切错杂弹，大珠小珠落玉盘。',
+              '古文明宝库，法老遗珍，图坦卡蒙宝藏，历史与艺术的殿堂。',
+            value: 2,
+            detail: [
+              {
+                description:
+                  '深度整合 AR、AI、人机交互与动态环境建模技术，构建前沿 XR 教学平台。借助 AR 眼镜，实现虚实融合的互动教学，适用于多学科课堂教学、课后自主探究及主题空间实践教学。通过互动、沉浸、体验式的创新教学方式帮助学生突破想象力局限，激发学习兴趣，提升教师数智化教学水平，助力学校打造人工智能创新校，引领教育新风尚。',
+                bg: '/image/pc/case/bg1.png',
+              },
+              {
+                description:
+                  '深度整合 AR、AI、人机交互与动态环境建模技术，构建前沿 XR 教学平台。借助 AR 眼镜，实现虚实融合的互动教学，适用于多学科课堂教学、课后自主探究及主题空间实践教学。通过互动、沉浸、体验式的创新教学方式帮助学生突破想象力局限，激发学习兴趣，提升教师数智化教学水平，助力学校打造人工智能创新校，引领教育新风尚。',
+                bg: '/image/pc/case/bg2.png',
+              },
+              {
+                description:
+                  '深度整合 AR、AI、人机交互与动态环境建模技术，构建前沿 XR 教学平台。借助 AR 眼镜，实现虚实融合的互动教学，适用于多学科课堂教学、课后自主探究及主题空间实践教学。通过互动、沉浸、体验式的创新教学方式帮助学生突破想象力局限，激发学习兴趣，提升教师数智化教学水平，助力学校打造人工智能创新校，引领教育新风尚。',
+                bg: '/image/pc/case/bg3.png',
+              },
+            ],
           },
           {
-            bg: '/image/pc/industry-case-bg1.png',
+            bg: '/image/pc/industry-case-bg3.png',
             title: '良渚博物馆',
             description:
-              '大弦嘈嘈如急雨，小弦切切如私语。嘈嘈切切错杂弹，大珠小珠落玉盘。',
+              '展现五千年良渚文明，玉器精湛，古城遗址，是中国古代文化的重要见证。',
+            value: 3,
+            detail: [
+              {
+                description:
+                  '深度整合 AR、AI、人机交互与动态环境建模技术，构建前沿 XR 教学平台。借助 AR 眼镜，实现虚实融合的互动教学，适用于多学科课堂教学、课后自主探究及主题空间实践教学。通过互动、沉浸、体验式的创新教学方式帮助学生突破想象力局限，激发学习兴趣，提升教师数智化教学水平，助力学校打造人工智能创新校，引领教育新风尚。',
+                bg: '/image/pc/case/bg1.png',
+              },
+              {
+                description:
+                  '深度整合 AR、AI、人机交互与动态环境建模技术，构建前沿 XR 教学平台。借助 AR 眼镜，实现虚实融合的互动教学，适用于多学科课堂教学、课后自主探究及主题空间实践教学。通过互动、沉浸、体验式的创新教学方式帮助学生突破想象力局限，激发学习兴趣，提升教师数智化教学水平，助力学校打造人工智能创新校，引领教育新风尚。',
+                bg: '/image/pc/case/bg2.png',
+              },
+              {
+                description:
+                  '深度整合 AR、AI、人机交互与动态环境建模技术，构建前沿 XR 教学平台。借助 AR 眼镜，实现虚实融合的互动教学，适用于多学科课堂教学、课后自主探究及主题空间实践教学。通过互动、沉浸、体验式的创新教学方式帮助学生突破想象力局限，激发学习兴趣，提升教师数智化教学水平，助力学校打造人工智能创新校，引领教育新风尚。',
+                bg: '/image/pc/case/bg3.png',
+              },
+            ],
           },
         ],
       },
       {
         label: '互娱',
         value: 2,
+        bg: '/image/pc/product/our-product2.png',
         children: [
           {
-            bg: '/image/pc/industry-case-bg1.png',
-            title: '上海自然博物馆',
+            bg: '/image/pc/industry-case-bg4.png',
+            title: '3D 奥特曼 AR 数字空间展',
             description:
-              '大弦嘈嘈如急雨，小弦切切如私语。嘈嘈切切错杂弹，大珠小珠落玉盘。',
+              'Rokid 联合奥特曼 IP，打造全球首个空间计算线下体验空间。',
+            value: 4,
+            detail: [
+              {
+                description:
+                  '深度整合 AR、AI、人机交互与动态环境建模技术，构建前沿 XR 教学平台。借助 AR 眼镜，实现虚实融合的互动教学，适用于多学科课堂教学、课后自主探究及主题空间实践教学。通过互动、沉浸、体验式的创新教学方式帮助学生突破想象力局限，激发学习兴趣，提升教师数智化教学水平，助力学校打造人工智能创新校，引领教育新风尚。',
+                bg: '/image/pc/case/bg1.png',
+              },
+              {
+                description:
+                  '深度整合 AR、AI、人机交互与动态环境建模技术，构建前沿 XR 教学平台。借助 AR 眼镜，实现虚实融合的互动教学，适用于多学科课堂教学、课后自主探究及主题空间实践教学。通过互动、沉浸、体验式的创新教学方式帮助学生突破想象力局限，激发学习兴趣，提升教师数智化教学水平，助力学校打造人工智能创新校，引领教育新风尚。',
+                bg: '/image/pc/case/bg2.png',
+              },
+              {
+                description:
+                  '深度整合 AR、AI、人机交互与动态环境建模技术，构建前沿 XR 教学平台。借助 AR 眼镜，实现虚实融合的互动教学，适用于多学科课堂教学、课后自主探究及主题空间实践教学。通过互动、沉浸、体验式的创新教学方式帮助学生突破想象力局限，激发学习兴趣，提升教师数智化教学水平，助力学校打造人工智能创新校，引领教育新风尚。',
+                bg: '/image/pc/case/bg3.png',
+              },
+            ],
           },
           {
-            bg: '/image/pc/industry-case-bg1.png',
-            title: '古埃及博物馆',
+            bg: '/image/pc/industry-case-bg2.png',
+            title: '洛阳博物馆',
             description:
-              '大弦嘈嘈如急雨，小弦切切如私语。嘈嘈切切错杂弹，大珠小珠落玉盘。',
+              '千年帝都文脉，馆藏丰富，从古代青铜器到唐三彩，尽显洛阳深厚历史底蕴。',
+            value: 5,
+            detail: [
+              {
+                description:
+                  '深度整合 AR、AI、人机交互与动态环境建模技术，构建前沿 XR 教学平台。借助 AR 眼镜，实现虚实融合的互动教学，适用于多学科课堂教学、课后自主探究及主题空间实践教学。通过互动、沉浸、体验式的创新教学方式帮助学生突破想象力局限，激发学习兴趣，提升教师数智化教学水平，助力学校打造人工智能创新校，引领教育新风尚。',
+                bg: '/image/pc/case/bg1.png',
+              },
+              {
+                description:
+                  '深度整合 AR、AI、人机交互与动态环境建模技术，构建前沿 XR 教学平台。借助 AR 眼镜，实现虚实融合的互动教学，适用于多学科课堂教学、课后自主探究及主题空间实践教学。通过互动、沉浸、体验式的创新教学方式帮助学生突破想象力局限，激发学习兴趣，提升教师数智化教学水平，助力学校打造人工智能创新校，引领教育新风尚。',
+                bg: '/image/pc/case/bg2.png',
+              },
+              {
+                description:
+                  '深度整合 AR、AI、人机交互与动态环境建模技术，构建前沿 XR 教学平台。借助 AR 眼镜，实现虚实融合的互动教学，适用于多学科课堂教学、课后自主探究及主题空间实践教学。通过互动、沉浸、体验式的创新教学方式帮助学生突破想象力局限，激发学习兴趣，提升教师数智化教学水平，助力学校打造人工智能创新校，引领教育新风尚。',
+                bg: '/image/pc/case/bg3.png',
+              },
+            ],
           },
           {
-            bg: '/image/pc/industry-case-bg1.png',
-            title: '良渚博物馆',
+            bg: '/image/pc/industry-case-bg3.png',
+            title: '广东省博物馆',
             description:
-              '大弦嘈嘈如急雨，小弦切切如私语。嘈嘈切切错杂弹，大珠小珠落玉盘。',
+              '位于广州珠江新城，展示广东历史文化，自然遗产丰富，是岭南文化的重要展示窗口。',
+            value: 6,
+            detail: [
+              {
+                description:
+                  '深度整合 AR、AI、人机交互与动态环境建模技术，构建前沿 XR 教学平台。借助 AR 眼镜，实现虚实融合的互动教学，适用于多学科课堂教学、课后自主探究及主题空间实践教学。通过互动、沉浸、体验式的创新教学方式帮助学生突破想象力局限，激发学习兴趣，提升教师数智化教学水平，助力学校打造人工智能创新校，引领教育新风尚。',
+                bg: '/image/pc/case/bg1.png',
+              },
+              {
+                description:
+                  '深度整合 AR、AI、人机交互与动态环境建模技术，构建前沿 XR 教学平台。借助 AR 眼镜，实现虚实融合的互动教学，适用于多学科课堂教学、课后自主探究及主题空间实践教学。通过互动、沉浸、体验式的创新教学方式帮助学生突破想象力局限，激发学习兴趣，提升教师数智化教学水平，助力学校打造人工智能创新校，引领教育新风尚。',
+                bg: '/image/pc/case/bg2.png',
+              },
+              {
+                description:
+                  '深度整合 AR、AI、人机交互与动态环境建模技术，构建前沿 XR 教学平台。借助 AR 眼镜，实现虚实融合的互动教学，适用于多学科课堂教学、课后自主探究及主题空间实践教学。通过互动、沉浸、体验式的创新教学方式帮助学生突破想象力局限，激发学习兴趣，提升教师数智化教学水平，助力学校打造人工智能创新校，引领教育新风尚。',
+                bg: '/image/pc/case/bg3.png',
+              },
+            ],
           },
         ],
       },
       {
         label: '教育',
         value: 3,
+        bg: '/image/pc/product/our-product3.png',
         children: [
           {
-            bg: '/image/pc/industry-case-bg1.png',
-            title: '上海自然博物馆',
-            description:
-              '大弦嘈嘈如急雨，小弦切切如私语。嘈嘈切切错杂弹，大珠小珠落玉盘。',
+            bg: '/image/pc/industry-case-bg7.png',
+            title: '杭州市澎致小学',
+            description: '元宇宙数智课堂，沉浸式学习探索',
+            value: 7,
+            detail: [
+              {
+                description:
+                  '深度整合 AR、AI、人机交互与动态环境建模技术，构建前沿 XR 教学平台。借助 AR 眼镜，实现虚实融合的互动教学，适用于多学科课堂教学、课后自主探究及主题空间实践教学。通过互动、沉浸、体验式的创新教学方式帮助学生突破想象力局限，激发学习兴趣，提升教师数智化教学水平，助力学校打造人工智能创新校，引领教育新风尚。',
+                bg: '/image/pc/case/bg1.png',
+              },
+              {
+                description:
+                  '深度整合 AR、AI、人机交互与动态环境建模技术，构建前沿 XR 教学平台。借助 AR 眼镜，实现虚实融合的互动教学，适用于多学科课堂教学、课后自主探究及主题空间实践教学。通过互动、沉浸、体验式的创新教学方式帮助学生突破想象力局限，激发学习兴趣，提升教师数智化教学水平，助力学校打造人工智能创新校，引领教育新风尚。',
+                bg: '/image/pc/case/bg2.png',
+              },
+              {
+                description:
+                  '深度整合 AR、AI、人机交互与动态环境建模技术，构建前沿 XR 教学平台。借助 AR 眼镜，实现虚实融合的互动教学，适用于多学科课堂教学、课后自主探究及主题空间实践教学。通过互动、沉浸、体验式的创新教学方式帮助学生突破想象力局限，激发学习兴趣，提升教师数智化教学水平，助力学校打造人工智能创新校，引领教育新风尚。',
+                bg: '/image/pc/case/bg3.png',
+              },
+            ],
           },
           {
-            bg: '/image/pc/industry-case-bg1.png',
-            title: '古埃及博物馆',
-            description:
-              '大弦嘈嘈如急雨，小弦切切如私语。嘈嘈切切错杂弹，大珠小珠落玉盘。',
+            bg: '/image/pc/industry-case-bg8.png',
+            title: '永康市大司巷小学',
+            description: '名画美育课堂，AR赋能沉浸式名画赏析',
+            value: 8,
+            detail: [
+              {
+                description:
+                  '深度整合 AR、AI、人机交互与动态环境建模技术，构建前沿 XR 教学平台。借助 AR 眼镜，实现虚实融合的互动教学，适用于多学科课堂教学、课后自主探究及主题空间实践教学。通过互动、沉浸、体验式的创新教学方式帮助学生突破想象力局限，激发学习兴趣，提升教师数智化教学水平，助力学校打造人工智能创新校，引领教育新风尚。',
+                bg: '/image/pc/case/bg1.png',
+              },
+              {
+                description:
+                  '深度整合 AR、AI、人机交互与动态环境建模技术，构建前沿 XR 教学平台。借助 AR 眼镜，实现虚实融合的互动教学，适用于多学科课堂教学、课后自主探究及主题空间实践教学。通过互动、沉浸、体验式的创新教学方式帮助学生突破想象力局限，激发学习兴趣，提升教师数智化教学水平，助力学校打造人工智能创新校，引领教育新风尚。',
+                bg: '/image/pc/case/bg2.png',
+              },
+              {
+                description:
+                  '深度整合 AR、AI、人机交互与动态环境建模技术，构建前沿 XR 教学平台。借助 AR 眼镜，实现虚实融合的互动教学，适用于多学科课堂教学、课后自主探究及主题空间实践教学。通过互动、沉浸、体验式的创新教学方式帮助学生突破想象力局限，激发学习兴趣，提升教师数智化教学水平，助力学校打造人工智能创新校，引领教育新风尚。',
+                bg: '/image/pc/case/bg3.png',
+              },
+            ],
           },
           {
-            bg: '/image/pc/industry-case-bg1.png',
-            title: '良渚博物馆',
-            description:
-              '大弦嘈嘈如急雨，小弦切切如私语。嘈嘈切切错杂弹，大珠小珠落玉盘。',
+            bg: '/image/pc/industry-case-bg9.png',
+            title: '杭州市三墩小学',
+            description: 'AR 美育课堂，新型教学模式探索',
+            value: 9,
+            detail: [
+              {
+                description:
+                  '深度整合 AR、AI、人机交互与动态环境建模技术，构建前沿 XR 教学平台。借助 AR 眼镜，实现虚实融合的互动教学，适用于多学科课堂教学、课后自主探究及主题空间实践教学。通过互动、沉浸、体验式的创新教学方式帮助学生突破想象力局限，激发学习兴趣，提升教师数智化教学水平，助力学校打造人工智能创新校，引领教育新风尚。',
+                bg: '/image/pc/case/bg1.png',
+              },
+              {
+                description:
+                  '深度整合 AR、AI、人机交互与动态环境建模技术，构建前沿 XR 教学平台。借助 AR 眼镜，实现虚实融合的互动教学，适用于多学科课堂教学、课后自主探究及主题空间实践教学。通过互动、沉浸、体验式的创新教学方式帮助学生突破想象力局限，激发学习兴趣，提升教师数智化教学水平，助力学校打造人工智能创新校，引领教育新风尚。',
+                bg: '/image/pc/case/bg2.png',
+              },
+              {
+                description:
+                  '深度整合 AR、AI、人机交互与动态环境建模技术，构建前沿 XR 教学平台。借助 AR 眼镜，实现虚实融合的互动教学，适用于多学科课堂教学、课后自主探究及主题空间实践教学。通过互动、沉浸、体验式的创新教学方式帮助学生突破想象力局限，激发学习兴趣，提升教师数智化教学水平，助力学校打造人工智能创新校，引领教育新风尚。',
+                bg: '/image/pc/case/bg3.png',
+              },
+            ],
           },
         ],
       },
@@ -133,7 +304,7 @@ const data = {
       {
         label: '若琪看看小程序上线良渚博物馆，展馆动态随时了解',
         value: 2,
-        bg: '/image/pc/information-bg1.png',
+        bg: '/image/pc/information-bg2.png',
         description:
           '滚滚长江东逝水，浪花淘尽英雄。是非成败转头空，青山依旧在，几度夕阳红。白发渔樵江渚上，惯看秋月春风。',
         date: '2014/02/20',
@@ -141,7 +312,7 @@ const data = {
       {
         label: 'Rokid Studio 套装帮助杭州师范小学学的同学探索宇宙世界',
         value: 3,
-        bg: '/image/pc/information-bg1.png',
+        bg: '/image/pc/information-bg3.png',
         description:
           '滚滚长江东逝水，浪花淘尽英雄。是非成败转头空，青山依旧在，几度夕阳红。白发渔樵江渚上，惯看秋月春风。',
         date: '2014/02/20',
@@ -164,6 +335,7 @@ const data = {
         title: '若琪看看',
         value: 1,
         icon: '/image/pc/product/product-icon1.png',
+        bg: '/image/pc/product/our-product1.png',
         description:
           '围绕 AR设备＋云端＋小程序，构建的一站式AR智慧导览平台，助力文博文旅等场景打造虚实融合、乐趣横生的导览体验。',
         children: [
@@ -175,141 +347,115 @@ const data = {
               '通过若琪看看智慧导览平台，让科幻电影的想象变为现实。游览者戴上 AR 眼镜设备，每个展品或景点都能出现虚拟内容，帮助游览者在真实空间。',
           },
           {
-            image: '/image/pc/product/product-image1.png',
-            title: '科幻电影般的 AR 体验',
+            image: '/image/pc/product/product-image2.png',
+            title: '丰富内容，大饱眼福',
             value: 2,
             description:
               '通过若琪看看智慧导览平台，让科幻电影的想象变为现实。游览者戴上 AR 眼镜设备，每个展品或景点都能出现虚拟内容，帮助游览者在真实空间。',
           },
           {
-            image: '/image/pc/product/product-image1.png',
-            title: '科幻电影般的 AR 体验',
+            image: '/image/pc/product/product-image3.png',
+            title: '智慧导览有个伴',
             value: 3,
             description:
-              '通过若琪看看智慧导览平台，让科幻电影的想象变为现实。游览者戴上 AR 眼镜设备，每个展品或景点都能出现虚拟内容，帮助游览者在真实空间。',
+              '当游览者在探索 AR 导览体验时，通过数字人技术自定义生成的导览精灵将伴随游览者身边。导览精灵将会根据游览者的喜好规划参观路径并给游览者一些小 Tips。',
           },
           {
-            image: '/image/pc/product/product-image1.png',
-            title: '科幻电影般的 AR 体验',
+            image: '/image/pc/product/product-image4.png',
+            title: '满足不同年龄段的探索者',
             value: 4,
             description:
-              '通过若琪看看智慧导览平台，让科幻电影的想象变为现实。游览者戴上 AR 眼镜设备，每个展品或景点都能出现虚拟内容，帮助游览者在真实空间。',
+              '在文博文旅场景中，不论是哪个年龄段的游览者，若琪看看会根据游览者的认知水平和语言偏好推送不同的，基于 AIGC 生成的讲解内容，同时游览者关于展品的任何问题。',
           },
           {
-            image: '/image/pc/product/product-image1.png',
-            title: '科幻电影般的 AR 体验',
+            image: '/image/pc/product/product-image5.png',
+            title: '寓教于乐，父母孩子都喜欢',
             value: 5,
             description:
-              '通过若琪看看智慧导览平台，让科幻电影的想象变为现实。游览者戴上 AR 眼镜设备，每个展品或景点都能出现虚拟内容，帮助游览者在真实空间。',
+              '通过设置任务关卡和互动游戏的方式，让父母和孩子一起体验 AR 智慧导览。孩子在游戏过程中获取知识，父母在陪伴过程中收获快乐，一起乐在其中。',
           },
           {
-            image: '/image/pc/product/product-image1.png',
-            title: '科幻电影般的 AR 体验',
+            image: '/image/pc/product/product-image6.png',
+            title: '来都来了，不能空手而归',
             value: 6,
             description:
-              '通过若琪看看智慧导览平台，让科幻电影的想象变为现实。游览者戴上 AR 眼镜设备，每个展品或景点都能出现虚拟内容，帮助游览者在真实空间。',
+              '游览者在游览结束后，将自动生成游览者的专属足迹和参观游记。游览者可以将其分享给朋友，或者制作成纪念品带走留言。让每次游览体验都留下独特回忆。',
           },
         ],
       },
       {
-        title: '乐奇玩玩',
+        title: '若琪玩玩',
         value: 2,
         icon: '/image/pc/product/product-icon1.png',
+        bg: '/image/pc/product/our-product2.png',
         description:
-          '围绕 AR设备＋云端＋小程序，构建的一站式AR智慧导览平台，助力文博文旅等场景打造虚实融合、乐趣横生的导览体验。',
+          '由 AR 技术驱动的新一代互动娱乐平台，为线下商业打造一站式数字空间活动方案及丰富的互动玩法，体验空间计算时代的沉浸式快乐。',
         children: [
           {
             image: '/image/pc/product/product-image1.png',
-            title: '科幻电影般的 AR 体验',
+            title: '超酷！超先锋！',
             value: 1,
             description:
-              '通过若琪看看智慧导览平台，让科幻电影的想象变为现实。游览者戴上 AR 眼镜设备，每个展品或景点都能出现虚拟内容，帮助游览者在真实空间。',
+              '基于 IP 世界观量身打造刺激的线下 AR 主题体验，包含手势打怪兽、空间音游、赛车竞速、剧本杀、沉浸式解密等丰富的互动玩法，在数字空间中戴上 Rokid AR眼镜即刻开始挑战，成为征服全场的顶流大师。',
           },
           {
-            image: '/image/pc/product/product-image1.png',
-            title: '科幻电影般的 AR 体验',
+            image: '/image/pc/product/product-image2.png',
+            title: '身临其境于虚实之间',
             value: 2,
             description:
-              '通过若琪看看智慧导览平台，让科幻电影的想象变为现实。游览者戴上 AR 眼镜设备，每个展品或景点都能出现虚拟内容，帮助游览者在真实空间。',
+              '利用 AR 的空间计算能力，随时将线空间一镜变为故事中的异世界，让二次元偶像以及故事中经典形象降临眼前，并可与他们直接通过语音、触摸等方式进行面对面互动，是粉丝必须一试的场地限定体验。',
           },
           {
-            image: '/image/pc/product/product-image1.png',
-            title: '科幻电影般的 AR 体验',
+            image: '/image/pc/product/product-image7.png',
+            title: '咔嚓，奇妙的快乐瞬间',
             value: 3,
             description:
-              '通过若琪看看智慧导览平台，让科幻电影的想象变为现实。游览者戴上 AR 眼镜设备，每个展品或景点都能出现虚拟内容，帮助游览者在真实空间。',
+              '全新场地打卡方式，无论是在现实空间中直接与虚拟角色亲密合影，还是化身成 IP 世界观中的角色使用必杀技，现在这些曾经在幻想中的影像都能在现场成真，能留下你在异世界存在的珍贵记忆，并分享到朋友圈，成为全村最靓的仔。',
           },
           {
-            image: '/image/pc/product/product-image1.png',
-            title: '科幻电影般的 AR 体验',
+            image: '/image/pc/product/product-image4.png',
+            title: '好玩的，你也能拥有',
             value: 4,
             description:
-              '通过若琪看看智慧导览平台，让科幻电影的想象变为现实。游览者戴上 AR 眼镜设备，每个展品或景点都能出现虚拟内容，帮助游览者在真实空间。',
-          },
-          {
-            image: '/image/pc/product/product-image1.png',
-            title: '科幻电影般的 AR 体验',
-            value: 5,
-            description:
-              '通过若琪看看智慧导览平台，让科幻电影的想象变为现实。游览者戴上 AR 眼镜设备，每个展品或景点都能出现虚拟内容，帮助游览者在真实空间。',
-          },
-          {
-            image: '/image/pc/product/product-image1.png',
-            title: '科幻电影般的 AR 体验',
-            value: 6,
-            description:
-              '通过若琪看看智慧导览平台，让科幻电影的想象变为现实。游览者戴上 AR 眼镜设备，每个展品或景点都能出现虚拟内容，帮助游览者在真实空间。',
+              '不止是线下体验，我们使用 AR 技术打造了次时代的周边产品，为传统谷子及文创产品植入了应用 AR 技术的炫酷新体验，让周边不止是一个静态展示物，还能把平面图像变成立体形象，让三维周边放大招，让体验者把精彩的 AR 数字体验带回家。',
           },
         ],
       },
       {
-        title: '大象 XR 教育',
+        title: '大象 AR 教育',
         value: 3,
-        icon: '/image/pc/product/product-icon1.png',
+        icon: '/image/pc/product/product-icon3.png',
+        bg: '/image/pc/product/our-product3.png',
         description:
-          '围绕 AR设备＋云端＋小程序，构建的一站式AR智慧导览平台，助力文博文旅等场景打造虚实融合、乐趣横生的导览体验。',
+          '基于 AR、AI、人机交互与动态环境建模技术，构建 XR 教学平台；通过 A R眼镜，实现虚实融合的互动学习。',
         children: [
           {
-            image: '/image/pc/product/product-image1.png',
-            title: '科幻电影般的 AR 体验',
+            image: '/image/pc/product/product-image8.png',
+            title: '沉浸其中，教学来“真”的',
             value: 1,
             description:
-              '通过若琪看看智慧导览平台，让科幻电影的想象变为现实。游览者戴上 AR 眼镜设备，每个展品或景点都能出现虚拟内容，帮助游览者在真实空间。',
+              'AR辅助老师将教学重难点动态、立体、交互式展现，带给学生；师生互动的沉浸式学习，帮助学生更好地理解知识点。',
           },
           {
-            image: '/image/pc/product/product-image1.png',
-            title: '科幻电影般的 AR 体验',
+            image: '/image/pc/product/product-image2.png',
+            title: '身临其境，“走进”书本中',
             value: 2,
             description:
-              '通过若琪看看智慧导览平台，让科幻电影的想象变为现实。游览者戴上 AR 眼镜设备，每个展品或景点都能出现虚拟内容，帮助游览者在真实空间。',
+              '通过 AR 眼镜走进虚实融合的交互空间，身临其境地去感受各类主题空间。智慧党建、数字非遗、逐梦航天、动物世界、梦幻海洋等众多标准化场景，形成了创新的、可深度参与的主题课堂。',
           },
           {
-            image: '/image/pc/product/product-image1.png',
-            title: '科幻电影般的 AR 体验',
+            image: '/image/pc/product/product-image9.png',
+            title: '虚实互动，“动手”学知识',
             value: 3,
             description:
-              '通过若琪看看智慧导览平台，让科幻电影的想象变为现实。游览者戴上 AR 眼镜设备，每个展品或景点都能出现虚拟内容，帮助游览者在真实空间。',
+              '通过虚实交互，学生可在美术、科技、运动、等场景下深度探究学习的新模式。例如：体验运动原理，体验空间绘画等，打开孩子“眼界”，增强学习兴趣，乐享学习。',
           },
           {
-            image: '/image/pc/product/product-image1.png',
-            title: '科幻电影般的 AR 体验',
+            image: '/image/pc/product/product-image10.png',
+            title: '自由设计课程，“画”出知识',
             value: 4,
             description:
-              '通过若琪看看智慧导览平台，让科幻电影的想象变为现实。游览者戴上 AR 眼镜设备，每个展品或景点都能出现虚拟内容，帮助游览者在真实空间。',
-          },
-          {
-            image: '/image/pc/product/product-image1.png',
-            title: '科幻电影般的 AR 体验',
-            value: 5,
-            description:
-              '通过若琪看看智慧导览平台，让科幻电影的想象变为现实。游览者戴上 AR 眼镜设备，每个展品或景点都能出现虚拟内容，帮助游览者在真实空间。',
-          },
-          {
-            image: '/image/pc/product/product-image1.png',
-            title: '科幻电影般的 AR 体验',
-            value: 6,
-            description:
-              '通过若琪看看智慧导览平台，让科幻电影的想象变为现实。游览者戴上 AR 眼镜设备，每个展品或景点都能出现虚拟内容，帮助游览者在真实空间。',
+              '基于大象 AR 教育平台资源中心、编辑器等功能；可轻松创作教师心中所想的课程内容；辅助老师结合针对不同学科、不同知识点、创作最适合学生的 AR 课程。',
           },
         ],
       },
@@ -364,20 +510,21 @@ const data = {
     list: [
       {
         title: 'AR智慧导览解决方案',
+        subTitle: 'AR智慧导览解决方案',
         value: 1,
-        bg: '/image/pc/product/bg.png',
+        bg: '/image/pc/product/our-product1.png',
         description:
           '基于 Al+AR+空间交互等技术能力，赋能文博文旅等业务场景，为游览者带来新世代、沉浸式、科幻感的智慧导览体验，感受“一眼一千年，一镜一世界”的科技和文化魅力。',
         children: [
           {
-            image: '/image/pc/product/product-image1.png',
+            image: '/image/pc/solution/solution-image1.png',
             title: '文博文化场景',
             value: 1,
             description:
               '通过若琪看看智慧导览平台，让科幻电影的想象变为现实。游览者戴上 AR 眼镜设备，每个展品或景点都能出现虚拟内容，帮助游览者在真实空间。',
           },
           {
-            image: '/image/pc/product/product-image1.png',
+            image: '/image/pc/solution/solution-image2.png',
             title: '科幻电影般的 AR 体验',
             value: 2,
             description:
@@ -385,29 +532,8 @@ const data = {
           },
           {
             image: '/image/pc/product/product-image1.png',
-            title: '科幻电影般的 AR 体验',
+            title: '文博文化场景',
             value: 3,
-            description:
-              '通过若琪看看智慧导览平台，让科幻电影的想象变为现实。游览者戴上 AR 眼镜设备，每个展品或景点都能出现虚拟内容，帮助游览者在真实空间。',
-          },
-          {
-            image: '/image/pc/product/product-image1.png',
-            title: '科幻电影般的 AR 体验',
-            value: 4,
-            description:
-              '通过若琪看看智慧导览平台，让科幻电影的想象变为现实。游览者戴上 AR 眼镜设备，每个展品或景点都能出现虚拟内容，帮助游览者在真实空间。',
-          },
-          {
-            image: '/image/pc/product/product-image1.png',
-            title: '科幻电影般的 AR 体验',
-            value: 5,
-            description:
-              '通过若琪看看智慧导览平台，让科幻电影的想象变为现实。游览者戴上 AR 眼镜设备，每个展品或景点都能出现虚拟内容，帮助游览者在真实空间。',
-          },
-          {
-            image: '/image/pc/product/product-image1.png',
-            title: '科幻电影般的 AR 体验',
-            value: 6,
             description:
               '通过若琪看看智慧导览平台，让科幻电影的想象变为现实。游览者戴上 AR 眼镜设备，每个展品或景点都能出现虚拟内容，帮助游览者在真实空间。',
           },
@@ -415,103 +541,63 @@ const data = {
       },
       {
         title: 'AR 数字主题空间盈利方案',
+        subTitle: '一站式AR主题数字空间解决方案',
         value: 2,
-        bg: '/image/pc/product/bg.png',
+        bg: '/image/pc/product/our-product2.png',
         description:
-          '基于 Al+AR+空间交互等技术能力，赋能文博文旅等业务场景，为游览者带来新世代、沉浸式、科幻感的智慧导览体验，感受“一眼一千年，一镜一世界”的科技和文化魅力。',
+          'Rokid 联合生态上下游共同打造了多个主题系列的一站式的数字空间 AR 体验解决方案，全链路解决从 IP 授权、内容开发、物料设计，到运营工具、营销方案、周边销售等项目落地问题，多样化的合作模式，全方位助力合作伙伴高效开店，复制成功经验快速盈利。',
         children: [
           {
-            image: '/image/pc/product/product-image1.png',
-            title: '文博文化场景',
+            image: '/image/pc/solution/solution-image3.png',
+            title: '打造前所未见的多元化沉浸体验',
             value: 1,
             description:
-              '通过若琪看看智慧导览平台，让科幻电影的想象变为现实。游览者戴上 AR 眼镜设备，每个展品或景点都能出现虚拟内容，帮助游览者在真实空间。',
+              '全新的 AR 黑科技+ IP 文化体验，通过 AR 眼镜实 现跟“偶像”近距离接触。AR 眼镜自带手势与地域触发式交互可以召唤英雄、与怪兽决战并与其合影。超酷体验：包含实景互动、模型展示、视频展示等丰富体验形式的超酷体验，多样化的人机交互能力，使用户身心感受虚实结合体验的炫酷。',
           },
           {
-            image: '/image/pc/product/product-image1.png',
-            title: '科幻电影般的 AR 体验',
+            image: '/image/pc/solution/solution-image4.png',
+            title: '全方位重构线下娱乐的人货场',
             value: 2,
             description:
-              '通过若琪看看智慧导览平台，让科幻电影的想象变为现实。游览者戴上 AR 眼镜设备，每个展品或景点都能出现虚拟内容，帮助游览者在真实空间。',
+              'AR+IP 联合，拥有极大消费市场和营销热度，打破空间的限制，通过 AR 重塑“场域”，提高坪效。用全新的呈现和交互方式，对各种 IP 的商业化运营带来衍生价值，赋能商业空间，打造娱乐体验新业态。',
           },
           {
-            image: '/image/pc/product/product-image1.png',
-            title: '科幻电影般的 AR 体验',
+            image: '/image/pc/solution/solution-image5.png',
+            title: '好经营好赚钱的空间运营方案',
             value: 3,
             description:
-              '通过若琪看看智慧导览平台，让科幻电影的想象变为现实。游览者戴上 AR 眼镜设备，每个展品或景点都能出现虚拟内容，帮助游览者在真实空间。',
-          },
-          {
-            image: '/image/pc/product/product-image1.png',
-            title: '科幻电影般的 AR 体验',
-            value: 4,
-            description:
-              '通过若琪看看智慧导览平台，让科幻电影的想象变为现实。游览者戴上 AR 眼镜设备，每个展品或景点都能出现虚拟内容，帮助游览者在真实空间。',
-          },
-          {
-            image: '/image/pc/product/product-image1.png',
-            title: '科幻电影般的 AR 体验',
-            value: 5,
-            description:
-              '通过若琪看看智慧导览平台，让科幻电影的想象变为现实。游览者戴上 AR 眼镜设备，每个展品或景点都能出现虚拟内容，帮助游览者在真实空间。',
-          },
-          {
-            image: '/image/pc/product/product-image1.png',
-            title: '科幻电影般的 AR 体验',
-            value: 6,
-            description:
-              '通过若琪看看智慧导览平台，让科幻电影的想象变为现实。游览者戴上 AR 眼镜设备，每个展品或景点都能出现虚拟内容，帮助游览者在真实空间。',
+              'Rokid 为合作伙伴准备了多类型的运营模式，根据运营场地包含面积、成本、客群肖像等特征，科学测算坪效，搭建利润模型，量身匹配合适的运营实施方案，帮助合作商搭建优质的线下数字空间，实力创收。',
           },
         ],
       },
       {
         title: 'AR 创新教学解决方案',
+        subTitle: 'AR 创新教学解决方案',
         value: 3,
-        bg: '/image/pc/product/bg.png',
+        bg: '/image/pc/product/our-product3.png',
         description:
-          '基于 Al+AR+空间交互等技术能力，赋能文博文旅等业务场景，为游览者带来新世代、沉浸式、科幻感的智慧导览体验，感受“一眼一千年，一镜一世界”的科技和文化魅力。',
+          '深度整合 AR、AI、人机交互与动态环境建模技术，构建前沿 XR 教学平台。借助 AR 眼镜，实现虚实融合的互动教学，适用于多学科课堂教学、课后自主探究及主题空间实践教学。通过互动、沉浸、体验式的创新教学方式帮助学生突破想象力局限，激发学习兴趣，提升教师数智化教学水平，助力学校打造人工智能创新校，引领教育新风尚。',
         children: [
           {
-            image: '/image/pc/product/product-image1.png',
-            title: '文博文化场景',
+            image: '/image/pc/solution/solution-image6.png',
+            title: 'AR 创新教室',
             value: 1,
             description:
-              '通过若琪看看智慧导览平台，让科幻电影的想象变为现实。游览者戴上 AR 眼镜设备，每个展品或景点都能出现虚拟内容，帮助游览者在真实空间。',
+              'AR 创新教室可用于科学、美术等学科教学，由AR 眼镜+大象 XR 教学平台+学科资源构成，形成独享视听、虚实结合、多重交互的创新教学环境。以具身认知理论和情境学习理论为基础，构建以学习者为中心的全新情境式、沉浸式、互动探究的教学模式。可用于新建智慧教室，也可在传统教室的基础上升级改造。',
           },
           {
-            image: '/image/pc/product/product-image1.png',
-            title: '科幻电影般的 AR 体验',
+            image: '/image/pc/solution/solution-image1.png',
+            title: 'AR 乐学',
             value: 2,
             description:
-              '通过若琪看看智慧导览平台，让科幻电影的想象变为现实。游览者戴上 AR 眼镜设备，每个展品或景点都能出现虚拟内容，帮助游览者在真实空间。',
+              'AR 乐学是应用于学校图书馆、阅览角、课后服务等自主学习探究场景的轻量化方案。通过 AR 眼镜进行可视化、沉浸式、互动性的趣味探究学习新模式，为学生营造全新的视听自主学习环境，打开孩子“眼界”，增强学习兴趣，乐享学习。',
           },
           {
-            image: '/image/pc/product/product-image1.png',
-            title: '科幻电影般的 AR 体验',
+            image: '/image/pc/solution/solution-image2.png',
+            title: 'AR 主题空间',
             value: 3,
             description:
-              '通过若琪看看智慧导览平台，让科幻电影的想象变为现实。游览者戴上 AR 眼镜设备，每个展品或景点都能出现虚拟内容，帮助游览者在真实空间。',
-          },
-          {
-            image: '/image/pc/product/product-image1.png',
-            title: '科幻电影般的 AR 体验',
-            value: 4,
-            description:
-              '通过若琪看看智慧导览平台，让科幻电影的想象变为现实。游览者戴上 AR 眼镜设备，每个展品或景点都能出现虚拟内容，帮助游览者在真实空间。',
-          },
-          {
-            image: '/image/pc/product/product-image1.png',
-            title: '科幻电影般的 AR 体验',
-            value: 5,
-            description:
-              '通过若琪看看智慧导览平台，让科幻电影的想象变为现实。游览者戴上 AR 眼镜设备，每个展品或景点都能出现虚拟内容，帮助游览者在真实空间。',
-          },
-          {
-            image: '/image/pc/product/product-image1.png',
-            title: '科幻电影般的 AR 体验',
-            value: 6,
-            description:
-              '通过若琪看看智慧导览平台，让科幻电影的想象变为现实。游览者戴上 AR 眼镜设备，每个展品或景点都能出现虚拟内容，帮助游览者在真实空间。',
+              'AR 主题空间，是基于大空间定位、高精度图片定位与识别、3D 空间音效等技术打造的 MR 混合现实交互体验空间。涵盖智慧党建、数字非遗、逐梦航天、动物世界、梦幻海洋等众多标准化场景，快速部署，单一空间多场景自由切换，广泛应用于学校、科普基地、少年宫等场景。',
           },
         ],
       },
@@ -548,19 +634,19 @@ const data = {
     tabList: [
       {
         label: '全部',
-        value: 1,
+        value: 0,
       },
       {
         label: '文旅',
-        value: 2,
+        value: 1,
       },
       {
         label: '互娱',
-        value: 3,
+        value: 2,
       },
       {
         label: '教育',
-        value: 4,
+        value: 3,
       },
     ],
     list: [

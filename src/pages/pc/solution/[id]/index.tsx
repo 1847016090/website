@@ -1,10 +1,11 @@
 import React, { memo, useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
-import { HomeTabs, Header, Footer } from '../../index';
+import { Header, Footer, HoverText, HoverButton } from '../../index';
 import { HomeTabEnum, PageEnum } from '@/utils/constants';
 import SITE_DATA from '../../../../utils/pageData';
 import { useParams } from 'next/navigation';
 import { useWindowHeight } from '@/utils/common';
+import { useRouter } from 'next/router';
 
 const Case = () => {
   const params = useParams();
@@ -46,7 +47,13 @@ const Case = () => {
 };
 
 const ProductCase = () => {
+  const params = useParams();
+  const current: any = SITE_DATA[PageEnum.IndustryCase].cases.find(
+    (i) => i.value === Number(params?.id),
+  );
+  [PageEnum.IndustryCase];
   const product = SITE_DATA[HomeTabEnum.Solution].case;
+  const router = useRouter();
   return (
     <div className="bg-white w-screen flex justify-center ">
       <div className="xl:w-[1440px] flex gap-[78px] p-[88px]  box-border flex-col items-center justify-center">
@@ -59,20 +66,32 @@ const ProductCase = () => {
           </div>
         </div>
         <div className="flex gap-20">
-          {product.cases.map((c, index) => (
+          {current.children.map((c: any, index: number) => (
             <div className="flex flex-col" key={index}>
               <Image src={c.bg} width={368} height={328} alt="bg" />
-              <div className="text-2xl font-bold mt-6">{c.title}</div>
+              <div className="text-2xl font-bold mt-6">
+                <HoverText
+                  onClick={() => {
+                    router.push(`/pc/cases/${c.value}`);
+                  }}
+                >
+                  {c.title}
+                </HoverText>
+              </div>
               <div className="mt-[18px] text-base text-[#666666]">
                 {c.description}
               </div>
-              <Image
+              <HoverButton
+                arrow
+                color="black"
                 className="mt-12"
                 width={98}
-                height={38}
-                src={product.knowMore}
-                alt="了解更多"
-              />
+                onClick={() => {
+                  router.push(`/pc/cases/${c.value}`);
+                }}
+              >
+                了解更多
+              </HoverButton>
             </div>
           ))}
         </div>
@@ -104,8 +123,21 @@ const Product = (props: any) => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+  const params = useParams();
+  console.log('params', params);
+  const current: any = SITE_DATA[HomeTabEnum.Product].list.find(
+    (i) => i.value === Number(params?.id),
+  );
+
   return (
-    <div className="bg-[#F2F2F2] before:bg-[url('/image/pc/product/bg.png')] before:w-full before:h-[810px] before:absolute relative before:left-0 before:top-0 before:right-0 before:bg-cover pt-[560px] before:z-0 before:bg-no-repeat">
+    <div className="bg-[#F2F2F2] relative pt-[560px]">
+      <div
+        style={{
+          backgroundImage: `url('${current.bg}')`,
+        }}
+        className="h-[810px] w-full absolute left-0 right-0 top-0 bg-cover z-0 bg-no-repeat"
+      ></div>
       <Header
         isHomePage={page === PageEnum.HomePage}
         current={HomeTabEnum.Solution}

@@ -2,13 +2,14 @@ import type { Config } from 'tailwindcss';
 
 const moblieExtend = {
   fontSize: {
-    'mb-20': '20px',
-    'mb-22': '22px',
-    'mb-24': '24px',
-    'mb-28': '28px',
-    'mb-36': '36px',
-    'mb-42': '42px',
-    'mb-48': '48px',
+    'mb-20': '20mpx',
+    'mb-22': '22mpx',
+    'mb-24': '24mpx',
+    'mb-28': '28mpx',
+    'mb-30': '30mpx',
+    'mb-36': '36mpx',
+    'mb-42': '42mpx',
+    'mb-48': '48mpx',
   },
   textColor: {
     'color-ccc': '#ccc',
@@ -36,7 +37,7 @@ const config: Config = {
         ...moblieExtend.textColor,
       },
       animation: {
-        'show-drawer': 'show-drawer 0.3s ease-out',
+        'show-drawer': '0.3s ease-out show-drawer forwards',
         'show-drawer-mask': 'show-drawer-mask 0.3s ease-out 1 normal forwards',
       },
       keyframes: {

@@ -7,6 +7,7 @@ import { debounce, useWindowHeight } from '@/utils/common';
 
 import SITE_DATA from '../../utils/pageData';
 import { relative } from 'path';
+
 const common = SITE_DATA.common;
 
 export const HoverButton = ({
@@ -46,7 +47,7 @@ export const HoverButton = ({
         borderImageSource: `url(${b})`,
         zIndex: 1,
       }}
-      className={`relative group px-[11px] flex justify-center items-center cursor-pointer ${className}`}
+      className={`cursor-pointer relative group px-[11px] flex justify-center items-center flex-nowrap ${className}`}
       onClick={() => onClick?.()}
     >
       <div
@@ -73,6 +74,7 @@ export const HoverText = ({
   checked = false,
   lineBg = '#333333',
   onClick,
+  lineHeight = 2,
 }: {
   children: any;
   lineWidth?: number;
@@ -80,6 +82,7 @@ export const HoverText = ({
   checked?: boolean;
   lineBg?: string;
   onClick?: Function;
+  lineHeight?: number;
 }) => {
   return (
     <div
@@ -91,8 +94,9 @@ export const HoverText = ({
           width: checked ? '100% !important' : `${lineWidth}px`,
           bottom: `-${lineToBottom}px`,
           backgroundColor: lineBg,
+          height: `${lineHeight}px`,
         }}
-        className={`transition-[width_3s] h-[2px] left-0 absolute group-hover:!w-full`}
+        className={`transition-[width_0.3s] left-0 absolute group-hover:!w-full`}
       />
       {children}
     </div>
@@ -102,22 +106,33 @@ export const HoverText = ({
 export const Tabs = ({
   list,
   className,
+  onChange,
+  value,
 }: {
   list: { label: string; value: number | string }[];
   className?: string;
+  onChange?: (key: any) => void;
+  value?: any;
 }) => {
   const [selected, setSelected] = useState<string | number>('');
   const onTabClick = (key: string | number) => {
     setSelected(key);
+    onChange?.(key);
   };
 
+  useEffect(() => {
+    setSelected(value);
+  }, [value]);
   return (
     <div className={`flex gap-12 items-center cursor-pointer ${className}`}>
       {list.map(({ label, value }) => (
         <div
           key={value}
-          className="relative leading-6"
+          className="relative leading-6 font-bold"
           onClick={() => onTabClick(value)}
+          style={{
+            color: selected === value ? '#333333' : '#666666',
+          }}
         >
           {label}
           {selected === value && (
@@ -159,7 +174,7 @@ export const HomeTabs = ({
   const onEnter = (key: HomeTabEnum) => {
     timerCount.current = setTimeout(() => {
       onMouseEnter?.(key);
-    }, 300);
+    }, 100);
   };
 
   const onLeave = (key: HomeTabEnum) => {
@@ -180,11 +195,14 @@ export const HomeTabs = ({
   }, [value]);
   console.log('selected', selected);
   return (
-    <div className={`flex gap-12 items-center cursor-pointer ${className}`}>
+    <div
+      style={{
+        color: isHomePage ? 'white' : 'black',
+        transition: 'all 0.3s',
+      }}
+      className={`flex gap-12 items-center cursor-pointer ${className}`}
+    >
       {HOME_TAB_LIST.map((item) => {
-        console.log('selected', selected);
-        console.log('value', item.value);
-        console.log('selected === value', selected === value);
         return (
           <div
             key={item.value}
@@ -205,7 +223,11 @@ export const HomeTabs = ({
                 )}
               </>
             ) : (
-              <HoverText lineWidth={0} lineBg={isHomePage ? '#fff' : '#333'}>
+              <HoverText
+                lineWidth={0}
+                lineHeight={3}
+                lineBg={isHomePage ? '#fff' : '#333'}
+              >
                 {item.label}
               </HoverText>
             )}
@@ -222,11 +244,13 @@ export const TabDrawer = ({
   onChange,
   className,
   onDrawerVisibleChange,
+  onEnterMask,
 }: {
   selected: HomeTabEnum;
   onChange?: (key: HomeTabEnum) => void;
   className?: string;
   onDrawerVisibleChange?: (visible: boolean) => void;
+  onEnterMask?: () => void;
 }) => {
   const [current, setCurrent] = useState(HomeTabEnum.Product);
   const [data, setData] = useState<any>(null);
@@ -244,17 +268,29 @@ export const TabDrawer = ({
     setData(data);
     onChange?.(key);
   };
-  console.log('data', data);
   return (
     <div
-      className={`fixed left-0 top-0 right-0 w-screen h-screen z-100 ${className}`}
+      className={`fixed left-0 top-0 right-0 w-screen h-screen z-[80] ${className}`}
+      onScroll={(e) => {
+        e.stopPropagation();
+      }}
+      onScrollCapture={() => {}}
     >
       <div
         className="animate-show-drawer-mask w-full h-full absolute left-0 top-0 right-0 z-[1]"
         onClick={() => onDrawerVisibleChange?.(false)}
+        onMouseEnter={() => onEnterMask?.()}
+        onScroll={(e) => {
+          e.stopPropagation();
+        }}
       />
-      <div className="absolute right-0 top-0 bottom-0 w-[624px] h-full bg-white z-[2] pt-[24px] px-[88px] box-border animate-show-drawer">
-        <HomeTabs isHomePage={false} onChange={onTabChange} value={current} />
+      <div className="absolute right-0 top-0 bottom-0 w-[624px] h-full bg-white z-[2] pt-[24px] px-[88px] box-border animate-show-drawer translate-x-[648px]">
+        <HomeTabs
+          className="opacity-0"
+          isHomePage={false}
+          onChange={onTabChange}
+          value={current}
+        />
         <div className="mt-[48px] flex justify-between text-[24px] leading-[32px]">
           <div className="text-[#3D3D3D] font-bold">{data?.label}</div>
           <div className="text-[#EDEDED]">{data?.subTitle}</div>
@@ -315,6 +351,8 @@ export const Header = ({
     if ([HomeTabEnum.Product, HomeTabEnum.Solution].includes(key)) {
       setSelected(key);
       setShow(true);
+    } else {
+      setShow(false);
     }
   };
 
@@ -328,9 +366,11 @@ export const Header = ({
     }
   }, [current]);
 
+  const router = useRouter();
+
   return (
     <div
-      className={`z-20 h-[4.5rem] px-[5.5rem] flex items-center justify-between fixed top-0 left-0 right-0 ${
+      className={`z-20 h-[72px] px-[88px] flex items-center justify-between fixed top-0 left-0 right-0 ${
         isHomePage
           ? 'border-b-[1px] border-transparent border-solid'
           : 'border-b-[1px] border-[rgba(0, 0, 0, 0.1)] border-solid'
@@ -342,15 +382,17 @@ export const Header = ({
         src={`/image/pc/logo-${isHomePage ? 'light' : 'dark'}.png`}
         width={180}
         height={30}
-        className="h-[30px] w-[180px]"
+        className="h-[30px] w-[180px] cursor-pointer"
         alt=""
+        onClick={() => router.push('/pc')}
       />
-      <div className={`text-${isHomePage ? 'white' : 'black'}`}>
+      <div className={`fixed !z-[200] top-0 w-[448px] h-[72px] right-[88px]`}>
         <HomeTabs
-          isHomePage={isHomePage}
+          isHomePage={show ? false : isHomePage}
           onChange={onTabChange}
           value={selected}
           onMouseEnter={onMouseEnter}
+          className="absolute top-[50%] translate-y-[-50%]"
         />
       </div>
       {show && (
@@ -358,6 +400,7 @@ export const Header = ({
           selected={selected}
           onChange={onDrawerChange}
           onDrawerVisibleChange={onDrawerVisibleChange}
+          onEnterMask={() => setShow(false)}
         />
       )}
     </div>
@@ -469,6 +512,12 @@ const OurProduct = () => {
 const IndustryCase = () => {
   const industry = SITE_DATA[PageEnum.IndustryCase];
   const cases = industry.cases[0]?.children;
+  const [current, setCurrent] = useState<any>(industry.cases[0]);
+  const router = useRouter();
+  const onTabChange = (key: any) => {
+    const data = industry.cases.find((i) => i.value === key);
+    setCurrent(data);
+  };
   return (
     <div
       id={PageEnum.IndustryCase}
@@ -481,22 +530,48 @@ const IndustryCase = () => {
             {industry.subTitle}
           </div>
         </div>
-        <div className="flex items-center gap-[48px]">
-          <Tabs list={industry.cases} className="text-2xl" />
-          <HoverButton arrow color="black" width={98}>
-            行业案例
+        <div className="flex gap-[48px] items-center">
+          <Tabs
+            list={industry.cases}
+            value={current.value}
+            onChange={onTabChange}
+            className="text-2xl"
+          />
+          <HoverButton
+            arrow
+            color="black"
+            width={98}
+            onClick={() => router.push('/pc/cases')}
+          >
+            全部案例
           </HoverButton>
         </div>
       </div>
-      <div className="flex gap-20">
-        {cases.map((c, index) => (
+      <div className="grid grid-cols-3 gap-20">
+        {current.children.map((c: any, index: number) => (
           <div className="flex flex-col" key={index}>
             <Image src={c.bg} width={368} height={328} alt="bg" />
-            <div className="text-2xl font-bold mt-6">{c.title}</div>
+            <div className="text-2xl font-bold mt-6">
+              <HoverText
+                onClick={() => {
+                  router.push(`/pc/cases/${c.value}`);
+                }}
+              >
+                {c.title}
+              </HoverText>
+            </div>
             <div className="mt-[18px] text-base text-[#666666]">
               {c.description}
             </div>
-            <HoverButton className="mt-12" arrow color="black" width={98}>
+            <HoverButton
+              arrow
+              color="black"
+              className="mt-12"
+              width={98}
+              onClick={() => {
+                router.push(`/pc/cases/${c.value}`);
+              }}
+            >
               了解更多
             </HoverButton>
           </div>
@@ -554,7 +629,7 @@ const BusinessForm = ({ onClose }: { onClose: Function }) => {
   };
 
   return (
-    <div className="fixed  left-0 top-0 right-0 w-screen h-screen flex justify-center items-center">
+    <div className="fixed z-[11111] left-0 top-0 right-0 w-screen h-screen flex justify-center items-center">
       <div
         onClick={() => onClose()}
         className="bg-[#000] opacity-50 w-full h-full absolute left-0 top-0 right-0 z-[1]"
@@ -650,7 +725,7 @@ const Information = () => {
           </div>
         </div>
         <div className="w-full flex h-[328px] gap-[88px]">
-          <div className="flex gap-6">
+          <div className="flex gap-[24px]">
             <Image
               src={first.bg}
               width={318}
@@ -658,19 +733,21 @@ const Information = () => {
               alt=""
               className="object-cover"
             />
-            <div>
-              <div className="mt-6 text-2xl leading-8 text-[#333333]">
-                {first.label}
+            <div className="box-border w-[318px] pt-[24px] pb-[19px] flex flex-col justify-between h-full">
+              <div className="">
+                <div className="text-2xl leading-8 text-[#333333]">
+                  <HoverText>{first.label}</HoverText>
+                </div>
+                <div className="text-[16px] text-[#666666] leading-6 mt-[34px]">
+                  {first.description}
+                </div>
               </div>
-              <div className="text-[16px] text-[#666666] leading-6 mt-[34px]">
-                {first.description}
-              </div>
-              <div className="text-[#999999] text-[14px] leading-[22px] mt-[93px]">
+              <div className="text-[#999999] text-[14px] leading-[22px]">
                 {first.date}
               </div>
             </div>
           </div>
-          <div className="flex flex-col justify-between h-[328px]">
+          <div className="flex flex-col justify-between h-[328px] flex-1">
             {rest.map((i) => (
               <div className="flex gap-6 h-[140px]" key={i.value}>
                 <Image
@@ -680,11 +757,11 @@ const Information = () => {
                   alt=""
                   className="object-cover w-[212px] h-[140px]"
                 />
-                <div>
-                  <div className="text-2xl leading-8 text-[#333333] mt-[15px]">
-                    {i.label}
+                <div className="h-full box-border py-[15px] flex flex-col justify-between">
+                  <div className="text-[20px] leading-8 text-[#333333]">
+                    <HoverText>{i.label}</HoverText>
                   </div>
-                  <div className="text-[#999999] text-[14px] leading-[22px] mt-[32px]">
+                  <div className="text-[#999999] text-[14px] leading-[22px]">
                     {i.date}
                   </div>
                 </div>
@@ -731,7 +808,7 @@ const Pc = (props: any) => {
   }, []);
 
   return (
-    <div className="overflow-auto flex flex-col justify-center items-center relative">
+    <div className=" overflow-hidden flex flex-col justify-center items-center relative">
       <Header isHomePage={page === PageEnum.HomePage} />
       <Home />
       <OurProduct />

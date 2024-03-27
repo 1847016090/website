@@ -1,10 +1,11 @@
 import React, { memo, useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { useParams } from 'next/navigation';
-import { HomeTabs, Header, Footer } from '../../index';
+import { Header, Footer, HoverButton, HoverText } from '../../index';
 import { HomeTabEnum, PageEnum } from '@/utils/constants';
 import SITE_DATA from '../../../../utils/pageData';
 import { useWindowHeight } from '@/utils/common';
+import { useRouter } from 'next/router';
 
 const Case = () => {
   const params = useParams();
@@ -17,11 +18,9 @@ const Case = () => {
     <div className="flex flex-col items-center relative z-10">
       <div className="xl:w-[1440px] px-[88px] pb-[88px]">
         <div>
-          <div className="w-[632px] h-[338px] flex flex-col justify-between bg-white p-[88px]">
+          <div className="w-[632px] h-[338px] flex flex-col justify-between bg-white p-[88px] gap-6">
             <div className="flex flex-row items-center gap-6">
-              <div className="border-[1px] border-solid border-[#e1e1e1] flex justify-center items-center h-[90px] w-[90px] rounded-3xl">
-                <Image src={current.icon} width={55} height={58} alt="" />
-              </div>
+              <Image src={current.icon} width={90} height={90} alt="" />
               <div className="text-[48px] leading-[56px] text-[#333333] tracking-wider">
                 {current.title}
               </div>
@@ -58,7 +57,13 @@ const Case = () => {
 };
 
 const ProductCase = () => {
+  const params = useParams();
+  console.log('params', params);
+  const current: any = SITE_DATA[PageEnum.IndustryCase].cases.find(
+    (i) => i.value === Number(params?.id),
+  );
   const product = SITE_DATA[HomeTabEnum.Product].case;
+  const router = useRouter();
   return (
     <div className="bg-white w-screen flex justify-center ">
       <div className="xl:w-[1440px] flex gap-[78px] p-[88px]  box-border flex-col items-center justify-center">
@@ -70,21 +75,33 @@ const ProductCase = () => {
             </div>
           </div>
         </div>
-        <div className="flex gap-20">
-          {product.cases.map((c, index) => (
+        <div className="grid grid-cols-3 gap-20">
+          {current?.children.map((c: any, index: number) => (
             <div className="flex flex-col" key={index}>
               <Image src={c.bg} width={368} height={328} alt="bg" />
-              <div className="text-2xl font-bold mt-6">{c.title}</div>
+              <div className="text-2xl font-bold mt-6">
+                <HoverText
+                  onClick={() => {
+                    router.push(`/pc/cases/${c.value}`);
+                  }}
+                >
+                  {c.title}
+                </HoverText>
+              </div>
               <div className="mt-[18px] text-base text-[#666666]">
                 {c.description}
               </div>
-              <Image
+              <HoverButton
+                arrow
+                color="black"
                 className="mt-12"
                 width={98}
-                height={38}
-                src={product.knowMore}
-                alt="了解更多"
-              />
+                onClick={() => {
+                  router.push(`/pc/cases/${c.value}`);
+                }}
+              >
+                了解更多
+              </HoverButton>
             </div>
           ))}
         </div>
@@ -94,6 +111,11 @@ const ProductCase = () => {
 };
 
 const OtherProduct = () => {
+  const params = useParams();
+  console.log('params', params);
+  const list: any = SITE_DATA[PageEnum.OurProduct].products.filter(
+    (i) => i.value !== Number(params?.id),
+  );
   const other = SITE_DATA[HomeTabEnum.Product].otherProduct;
   return (
     <div className="bg-white w-screen flex justify-center ">
@@ -107,21 +129,19 @@ const OtherProduct = () => {
           </div>
         </div>
         <div className="flex gap-[88px]">
-          {other.children.map((o, index) => (
+          {list.map((o: any, index: number) => (
             <div
               style={{
-                backgroundImage: `url(${o.image})`,
+                backgroundImage: `url(${o.bg})`,
               }}
               key={index}
               className="w-[588px] h-[300px] bg-cover bg-no-repeat bg-center flex justify-center items-center gap-6"
             >
-              <div className="w-[90px] h-[90px] rounded-3xl bg-white flex justify-center items-center">
-                <Image src={o.icon} width={55} height={58} alt="" />
-              </div>
+              <Image src={o.icon} width={90} height={90} alt="" />
               <div className="text-white">
-                <div className="text-[38px] leading-[46px] ">{o.title}</div>
+                <div className="text-[38px] leading-[46px] ">{o.subTitle}</div>
                 <div className="text-[24px] leading-[32px] opacity-60">
-                  {o.subTitle}
+                  {o.subDescription}
                 </div>
               </div>
             </div>
@@ -156,8 +176,26 @@ const Product = (props: any) => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+  const params = useParams();
+  console.log('params', params);
+  const current: any = SITE_DATA[HomeTabEnum.Product].list.find(
+    (i) => i.value === Number(params?.id),
+  );
+  // style={{
+  //   backgroundImage: `url('${current.bg}')`,
+  //   backgroundSize: '100% 810px',
+  //   backgroundPosition: 'center',
+  //   backgroundRepeat: 'no-repeat',
+  // }}
   return (
-    <div className="bg-[#F2F2F2] before:bg-[url('/image/pc/product/bg.png')] before:w-full before:h-[810px] before:absolute relative before:left-0 before:top-0 before:right-0 before:bg-cover pt-[560px] before:z-0 before:bg-no-repeat">
+    <div className="bg-[#F2F2F2] relative pt-[560px]">
+      <div
+        style={{
+          backgroundImage: `url('${current.bg}')`,
+        }}
+        className="h-[810px] w-full absolute left-0 right-0 top-0 bg-cover z-0 bg-no-repeat"
+      ></div>
       <Header
         isHomePage={page === PageEnum.HomePage}
         current={HomeTabEnum.Product}

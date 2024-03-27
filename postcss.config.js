@@ -11,6 +11,7 @@ module.exports = {
       mediaQuery: false,
       minPixelValue: 1,
       exclude: /globalsPc/,
+      unit: 'mpx'
     },
   },
 };

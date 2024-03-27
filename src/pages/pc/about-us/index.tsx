@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import Image from 'next/image';
-import { HomeTabs, Header, Footer, Tabs } from '../index';
+import { Header, Footer } from '../index';
 import { HomeTabEnum } from '@/utils/constants';
 import SITE_DATA from '../../../utils/pageData';
 

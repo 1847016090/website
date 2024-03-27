@@ -4,7 +4,6 @@ import { NextPageContext } from 'next/dist/shared/lib/utils'
 import isMobile from 'is-mobile'
 
 export default function MyApp({ Component, pageProps }: AppProps) {
-  console.log('Component', Component)
   if (['Pc', 'Product'].includes(Component.name)) {
     require('@/styles/globalsPc.css')
   } else {
